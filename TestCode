@@ -1,0 +1,33 @@
+package rnd;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class VenturesityDemo {
+	ArrayList<String> arrayStrngs=new ArrayList<String>();
+	public static void main(String[] args){
+		
+		VenturesityDemo ad=new VenturesityDemo();
+		ad.readFromConsol();
+	}
+	public void readFromConsol(){
+		System.out.println("Enter Strings with comma separated");
+		try{
+		BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+	    String s = bufferRead.readLine();
+	    String[] st=s.split(",");
+	    for(int i=0;i<st.length;i++){
+	    	arrayStrngs.add(st[i]);
+	    	
+	    }
+	    Collections.sort(arrayStrngs);
+	    for(String temp: arrayStrngs){
+			System.out.println(temp);
+		}
+	    }catch(Exception e){
+			System.out.println("Exception "+e);
+		}
+	}
+
+}
